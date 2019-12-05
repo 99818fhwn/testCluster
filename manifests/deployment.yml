@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: fhwntestcluster 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: fhwntestcluster 
+    spec:
+      containers:
+        - name: fhwntestcluster 
+          image: swdep2.azurecr.io/fhwntestcluster
+          ports:
+          - containerPort: 3000
